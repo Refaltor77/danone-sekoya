@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+/* Définir la police via @font-face */
+@font-face {
+    font-family: 'KGAlwaysAGoodTime';
+    src: url('./fonts/KGAlwaysAGoodTime.ttf') format('truetype');
+}
+
+:root
+{
+    --color-text-primary: #67227B;
+    --color-border-inputs: #2C3A8D;
+    --color-placeholders: #5F5F5F;
+    --color-text-secondary: #2C3A8D;
+    --color-text-secondary-hover: #151b4a;
+    --color-text-other: #5F5F5F;
+}
+
+input {
+    border: none; /* Supprime la bordure */
+    outline: none; /* Supprime le contour (focus) si nécessaire */
+}
+
+.kga
+{
+    font-family: 'KGAlwaysAGoodTime', sans-serif;
+}
+.primary-color
+{
+    color: var(--color-text-primary);
+}
+.secondary-color
+{
+    color: var(--color-text-secondary);
+}
+.rubik
+{
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+.border-blue
+{
+    border: solid 3px var(--color-border-inputs);
+    border-color: var(--color-border-inputs);
+}
+.container_center {
+    max-width: 1440px; /* Vous pouvez ajuster cette valeur selon vos besoins */
+    margin: 0 auto;
+}

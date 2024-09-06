@@ -1,0 +1,49 @@
+@import "../variables.css";
+
+#form_container
+{
+    background: rgba(255, 255, 255, 0.75);
+    width: 430px;
+    height: 670px;
+    position: relative;
+}
+#title_form
+{
+    font-size: 34px;
+}
+#span_form
+{
+    font-size: 26px;
+}
+#text_secondary
+{
+    font-size: 15px;
+}
+#span_click
+{
+    font-size: 10px;
+    color: var(--color-text-other);
+}
+#button_send
+{
+    font-size: 18px;
+    font-weight: 400;
+    background-color: var(--color-text-secondary);
+    color: white;
+    border-radius: 42px;
+    padding: 17px 20px;
+    width: 73%;
+    box-shadow: 0px 5px 5px #bababa;
+}
+.span_line_bottom
+{
+    color: var(--color-text-other);
+    font-size: 10px;
+}
+
+
+input[type=checkbox]
+{
+    border: 1px solid gray;
+    padding: 8px;
+}

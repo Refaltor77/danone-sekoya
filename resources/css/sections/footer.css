@@ -1,0 +1,11 @@
+@import "../variables.css";
+
+#footer_section
+{
+    background: var(--color-text-primary);
+}
+.text_nav_footer
+{
+    font-size: 12px;
+    color: #DDDDDD;
+}

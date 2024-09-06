@@ -1,0 +1,42 @@
+@import "../variables.css";
+
+#three_section
+{
+    background: url("../../../storage/app/public/images/background_second.png") center center no-repeat;
+    background-size: cover;
+    border-radius: 2px;
+}
+#three_section
+{
+    font-size: 28px;
+}
+#image_baby
+{
+    width: 509px;
+    height: 338px;
+}
+#section_article_instructions > article > p
+{
+    font-size: 15px;
+    color: var(--color-text-other);
+}
+.text_button_link
+{
+    background: var(--color-text-secondary);
+    border-radius: 42px;
+    box-shadow: 0 5px 5px #c1c1c1;
+    transition: 150ms;
+}
+.text_button_link:hover
+{
+    background: var(--color-text-secondary-hover);
+}
+.text_button_link
+{
+    font-size: 20px;
+}
+.text_article_three_section
+{
+    width: 93%;
+    line-height: 18px;
+}

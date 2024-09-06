@@ -1,0 +1,17 @@
+@import "../variables.css";
+
+.text_button_link
+{
+    background: var(--color-text-secondary);
+    border-radius: 42px;
+    box-shadow: 0 5px 5px #c1c1c1;
+    transition: 150ms;
+}
+.text_button_link:hover
+{
+    background: var(--color-text-secondary-hover);
+}
+.text_button_link > p
+{
+    font-size: 20px;
+}
