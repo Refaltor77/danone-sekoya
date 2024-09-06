@@ -10,7 +10,7 @@ import "../../../css/sections/welcomeSection.css";
 import Logo from "@/Components/Logo.jsx";
 import Form from "@/Components/Form.jsx";
 
-export default function WelcomeSection()
+export default function WelcomeSection({showPopup, setShowPopup})
 {
     return (
         <div id={"welcome_section"} className={""}>
@@ -23,7 +23,7 @@ export default function WelcomeSection()
                     id={"form-container"}
                     className={"flex justify-end px-14"}
                 >
-                    <Form/>
+                    <Form showPopup={showPopup} setShowPopup={setShowPopup} />
                 </section>
             </section>
         </div>

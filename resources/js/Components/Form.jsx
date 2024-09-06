@@ -15,7 +15,7 @@ import SelectYearInput from "@/Components/SelectYearInput.jsx";
 import Checkbox from "@/Components/Checkbox.jsx";
 import ButtonProcessing from "@/Components/ButtonProcessing.jsx";
 
-export default function Form()
+export default function Form({showPopup, setShowPopup})
 {
     return (
         <form
@@ -23,7 +23,7 @@ export default function Form()
             className={"-translate-y-14"}
         >
             <NewGameImg/>
-            <section className={"px-4 -translate-y-10 flex-col flex"}>
+            <form className={"px-4 -translate-y-10 flex-col flex"}>
                 <h1
                     id={"title_form"}
                     className={"kga text-center primary-color -translate-y-2"}
@@ -85,6 +85,9 @@ export default function Form()
                     <ButtonProcessing
                         processing={false}
                         id={"button_send"}
+                        onClick={() => {
+                            setShowPopup(true);
+                        }}
                     >
                         <span className={"kga"}>Je participe</span>
                     </ButtonProcessing>
@@ -95,7 +98,7 @@ export default function Form()
                         ¹ La composition des paniers gourmands est détaillée dans le <a href={"#"} className={"underline"}>règlement du jeu</a>
                     </span>
                 </div>
-            </section>
+            </form>
         </form>
     )
 }

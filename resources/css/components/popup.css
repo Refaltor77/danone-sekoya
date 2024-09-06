@@ -1,0 +1,103 @@
+@import "../variables.css";
+
+
+
+#popup
+{
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+#popup > img
+{
+    transform: translateX(990px) translateY(300px);
+}
+#popup > section
+{
+    border-radius: 7px;
+    height: 100%;
+    width: 100%;
+}
+#popup > section > article
+{
+    width: 50%;
+    padding-top: 15px;
+}
+#popup > section > article > h1
+{
+    font-size: 30px;
+}
+#popup > section > article > p
+{
+    font-size: 15px;
+    color: var(--color-text-other);
+    width: 75%;
+    margin-top: 20px;
+}
+#container_popup_in_popup
+{
+    border: 2px solid var(--color-text-primary);
+    border-radius: 12px;
+    width: 75%;
+}
+#container_popup_in_popup > #lign_container > .lign
+{
+    background-color: var(--color-text-primary);
+    width: 1px;
+}
+#container_popup_in_popup > #first_artticle
+{
+    width: 45%;
+}
+#container_popup_in_popup > #second_article
+{
+    width: 55%;
+}
+#container_popup_in_popup > #second_article > h2
+{
+    font-size: 12px;
+    font-weight: 400;
+    width: 95%;
+}
+#container_popup_in_popup > div > h1
+{
+    font-size: 20px;
+    width: 100%;
+}
+#container_popup_in_popup > div > p
+{
+    font-size: 14px;
+    width: 100%;
+}
+#container_popup_in_popup > div > a
+{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+#container_popup_in_popup > div > a > p
+{
+    font-size: 12px;
+}
+#popup > section > article > h1
+{
+    font-size: 28px;
+}
+#popup_links_shares
+{
+    border: 2px solid var(--color-text-primary);
+    border-radius: 12px;
+    width: 75%;
+}
+#popup_links_shares > h2
+{
+    font-size: 25px;
+    font-weight: 500;
+}
+#popup_links_shares > p
+{
+    font-size: 12px;
+    font-weight: 500;
+}

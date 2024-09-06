@@ -8,7 +8,6 @@ export default function Checkbox({className, value, onClick, label, id, pixelLab
                 className={" " + className}
                 value={value}
                 onClick={onClick}
-                required={true}
             />
             <label
                 style={{fontSize: pixelLabel + "px"}}

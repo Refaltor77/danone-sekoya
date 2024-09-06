@@ -35,6 +35,11 @@
     width: 73%;
     box-shadow: 0px 5px 5px #bababa;
 }
+#button_send:hover
+{
+    background: var(--color-text-secondary-hover);
+    transition: 150ms;
+}
 .span_line_bottom
 {
     color: var(--color-text-other);
