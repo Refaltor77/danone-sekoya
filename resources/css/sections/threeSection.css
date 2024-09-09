@@ -17,6 +17,7 @@
     background: url("../../../storage/app/public/images/background_second.png") center center no-repeat;
     background-size: cover; /* Cover the background area with the image */
     border-radius: 2px; /* Round corners of the section */
+    padding-bottom: 150px;
 }
 
 #three_section
