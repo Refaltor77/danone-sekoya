@@ -1,54 +1,146 @@
+/**
+ *   _____
+ *  /     \
+ * |  o o  |
+ * |   >   |
+ * |  \_/  |
+ *  \_____/
+ *
+ *
+ * @sekoyaTech
+ * @author SekoyaDigital
+ */
+
 @import "../variables.css";
 
 #form_container
 {
-    background: rgba(255, 255, 255, 0.75);
-    width: 430px;
-    height: 670px;
-    position: relative;
-}
-#title_form
-{
-    font-size: 34px;
-}
-#span_form
-{
-    font-size: 26px;
-}
-#text_secondary
-{
-    font-size: 15px;
-}
-#span_click
-{
-    font-size: 10px;
-    color: var(--color-text-other);
-}
-#button_send
-{
-    font-size: 18px;
-    font-weight: 400;
-    background-color: var(--color-text-secondary);
-    color: white;
-    border-radius: 42px;
-    padding: 17px 20px;
-    width: 73%;
-    box-shadow: 0px 5px 5px #bababa;
-}
-#button_send:hover
-{
-    background: var(--color-text-secondary-hover);
-    transition: 150ms;
-}
-.span_line_bottom
-{
-    color: var(--color-text-other);
-    font-size: 10px;
+    background: rgba(255, 255, 255, 0.75); /* Background color with transparency */
+    width: 430px; /* Container width */
+    min-height: 670px; /* Minimum height of the container */
+    position: relative; /* Positioning context for child elements */
 }
 
+#title_form
+{
+    font-size: 34px; /* Font size for the title */
+}
+
+#span_form
+{
+    font-size: 26px; /* Font size for the span under the title */
+}
+
+#text_secondary
+{
+    font-size: 15px; /* Font size for secondary text */
+}
+
+#span_click
+{
+    font-size: 10px; /* Font size for the clickable text */
+    color: var(--color-text-other); /* Color for the clickable text */
+}
+
+#button_send
+{
+    font-size: 18px; /* Font size for the button text */
+    font-weight: 400; /* Font weight for the button text */
+    background-color: var(--color-text-secondary); /* Background color of the button */
+    color: white; /* Text color of the button */
+    border-radius: 42px; /* Rounded corners of the button */
+    padding: 17px 20px; /* Padding inside the button */
+    width: 73%; /* Width of the button */
+    box-shadow: 0px 5px 5px #bababa; /* Shadow effect for the button */
+}
+
+#button_send:hover
+{
+    background: var(--color-text-secondary-hover); /* Background color on hover */
+    transition: 150ms; /* Smooth transition effect for hover */
+}
+
+.span_line_bottom
+{
+    color: var(--color-text-other); /* Color for the bottom text */
+    font-size: 10px; /* Font size for the bottom text */
+}
 
 input[type=checkbox]
 {
-    border: 1px solid gray;
-    padding: 8px;
+    border: 1px solid gray; /* Border style for checkboxes */
+    padding: 8px; /* Padding inside the checkbox */
+}
+
+@media screen and (max-width: 470px)
+{
+    #form_container
+    {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Auto height adjustment on small screens */
+    }
+}
+
+@media screen and (max-width: 452px)
+{
+    .select_inputs
+    {
+        padding: 10px 30px; /* Padding adjustment for small screens */
+    }
+}
+
+@media screen and (max-width: 438px)
+{
+    .select_inputs
+    {
+        padding: 10px 28px; /* Padding adjustment for smaller screens */
+    }
+}
+
+@media screen and (max-width: 424px)
+{
+    .select_inputs
+    {
+        padding: 10px 25px; /* Padding adjustment for even smaller screens */
+    }
+}
+
+@media screen and (max-width: 408px)
+{
+    #title_form
+    {
+        font-size: 24px; /* Smaller font size for the title */
+    }
+    #span_form
+    {
+        font-size: 14px; /* Smaller font size for the span under the title */
+    }
+}
+
+@media screen and (max-width: 390px)
+{
+    .select_inputs
+    {
+        padding: 10px 22px; /* Padding adjustment for very small screens */
+    }
+    form
+    {
+        padding: 0; /* Remove form padding on small screens */
+    }
+    #section_inputs
+    {
+        padding: 0; /* Remove padding from input section */
+    }
+    #sections_selects
+    {
+        padding: 0; /* Remove padding from selects section */
+    }
+}
+
+@media screen and (max-width: 376px)
+{
+    #promos_kiri
+    {
+        font-size: 1px; /* Extremely small font size for checkboxes */
+    }
 }

@@ -1,17 +1,32 @@
+/**
+ *   _____
+ *  /     \
+ * |  o o  |
+ * |   >   |
+ * |  \_/  |
+ *  \_____/
+ *
+ *
+ * @sekoyaTech
+ * @author SekoyaDigital
+ */
+
 @import "../variables.css";
 
 .text_button_link
 {
-    background: var(--color-text-secondary);
-    border-radius: 42px;
-    box-shadow: 0 5px 5px #c1c1c1;
-    transition: 150ms;
+    background: var(--color-text-secondary); /* Background color of the button */
+    border-radius: 42px; /* Rounded corners of the button */
+    box-shadow: 0 5px 5px #c1c1c1; /* Shadow effect for the button */
+    transition: 150ms; /* Smooth transition effect for hover */
 }
+
 .text_button_link:hover
 {
-    background: var(--color-text-secondary-hover);
+    background: var(--color-text-secondary-hover); /* Background color on hover */
 }
+
 .text_button_link > p
 {
-    font-size: 20px;
+    font-size: 20px; /* Font size of the text inside the button */
 }

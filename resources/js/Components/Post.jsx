@@ -1,15 +1,28 @@
-export default function Post({ title, secondTitle, text }) {
+/**
+ * Post component displays a card with a front and back side.
+ *
+ * Props:
+ * - title: The title text shown on the front side of the card.
+ * - secondTitle: The secondary title text shown on the back side of the card.
+ * - text: The content text displayed on the back side of the card.
+ * - id: An optional ID for the card element.
+ *
+ * The card has a hover effect that transitions between the front and back sides.
+ */
+export default function Post({ title, secondTitle, text, id }) {
     return (
-        <article className="relative post">
+        <article className="relative">
             <div className={"box"}>
                 <div className={"box-inner"}>
-                    <div id={"post_one"} className="h-full flex flex-col justify-end items-center box-front">
-                        <img src={"/storage/images/new_text.svg"} alt={"new_text"} className={"relative z-50 top-0 img_new"}/>
+                    {/* Front side of the card */}
+                    <div id={id} className="h-full flex flex-col justify-end items-center box-front">
+                        <img src={"/storage/images/new_text.svg"} alt={"new_text"} className={"relative z-50 top-0 img_new"} />
                         <div
                             className={"bg-primary w-4/5 kga text-white text-center py-2 translate-y-6 group-hover:opacity-0 transition-opacity popup_post z-50"}>
                             {title}
                         </div>
                     </div>
+                    {/* Back side of the card */}
                     <div className="bg-primary text-white flex items-center justify-center transition box-back">
                         <div className="flex flex-col gap-6 items-center">
                             <h2 className={"kga w-2/3 text-center title_post"}>

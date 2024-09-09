@@ -1,5 +1,65 @@
+/**
+ *   _____
+ *  /     \
+ * |  o o  |
+ * |   >   |
+ * |  \_/  |
+ *  \_____/
+ *
+ * @sekoyaTech
+ * @author SekoyaDigital
+ */
+
 #welcome_section
 {
     background: url("../../../storage/app/public/images/background.png") center center no-repeat;
-    background-size: cover;
+    background-size: cover; /* Cover the background area with the image */
+}
+
+/* Partie responsive */
+
+#logo_mobile
+{
+    display: none; /* Hide the mobile logo by default */
+}
+
+@media screen and (max-width: 932px)
+{
+    #logo_desktop
+    {
+        display: none; /* Hide the desktop logo on smaller screens */
+    }
+    #form-container
+    {
+        justify-content: space-around; /* Space out elements in the form container */
+        flex-direction: column; /* Stack elements vertically */
+        padding: 0; /* Remove padding */
+    }
+    #logo_mobile
+    {
+        display: block; /* Show the mobile logo on smaller screens */
+        margin-bottom: 80px; /* Add margin below the logo */
+    }
+    #form_container
+    {
+        align-self: center; /* Center align the form container */
+    }
+}
+
+@media screen and (max-width: 470px)
+{
+    #form-container
+    {
+        padding: 0 14px; /* Add padding to the form container */
+    }
+    #logo_mobile
+    {
+        align-self: center; /* Center align the mobile logo */
+        margin-top: 10px; /* Add margin on top of the logo */
+    }
+    #form_container
+    {
+        width: 100%; /* Full width for the form container */
+        height: auto; /* Auto height for the form container */
+    }
 }

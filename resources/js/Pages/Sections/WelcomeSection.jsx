@@ -1,28 +1,29 @@
-/*
- * Première section du site, qui contient le formulaire.
- * @sekoyaDev
- */
+// @sekoyaDigitalTech
+// https://www.sekoya.digital/
 
-/* Fichier css qui contient le style de la section,       */
-/* toute les sections du site possède leurs propre css    */
-/* afin de facilité le responsive (propre !)              */
 import "../../../css/sections/welcomeSection.css";
 import Logo from "@/Components/Logo.jsx";
 import Form from "@/Components/Form.jsx";
 
-export default function WelcomeSection({showPopup, setShowPopup})
-{
+export default function WelcomeSection({ showPopup, setShowPopup }) {
     return (
-        <div id={"welcome_section"} className={""}>
+        <div id={"welcome_section"}>
+            {/* Container for centering the content */}
             <section
-                id={""}
+                id={"container_center"}
                 className={"container_center"}
             >
-                <Logo classNameDiv={"py-4"}/>
+                {/* Logo for desktop view */}
+                <Logo classNameDiv={"py-4"} idDiv={"logo_desktop"} />
+
+                {/* Form container with flex layout */}
                 <section
                     id={"form-container"}
                     className={"flex justify-end px-14"}
                 >
+                    {/* Logo for mobile view */}
+                    <Logo classNameDiv={""} idDiv={"logo_mobile"} />
+                    {/* Form component with popup control props */}
                     <Form showPopup={showPopup} setShowPopup={setShowPopup} />
                 </section>
             </section>

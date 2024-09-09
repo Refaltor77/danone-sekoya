@@ -1,103 +1,269 @@
+/**
+ *   _____
+ *  /     \
+ * |  o o  |
+ * |   >   |
+ * |  \_/  |
+ *  \_____/
+ *
+ * @sekoyaTech
+ * @author SekoyaDigital
+ */
+
 @import "../variables.css";
-
-
 
 #popup
 {
-    background: rgba(0, 0, 0, 0.2);
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1000;
+    background: rgba(0, 0, 0, 0.2); /* Transparent background for the popup */
+    position: fixed; /* Fixed positioning to cover the entire screen */
+    width: 100%; /* Full width of the screen */
+    height: 100%; /* Full height of the screen */
+    z-index: 1000; /* Layer above other elements */
 }
+
+#mobile_version
+{
+    display: none; /* Hidden by default */
+}
+
 #popup > img
 {
-    transform: translateX(990px) translateY(300px);
+    transform: translateX(990px) translateY(300px); /* Positioning for the image */
 }
+
 #popup > section
 {
-    border-radius: 7px;
-    height: 100%;
-    width: 100%;
+    border-radius: 7px; /* Rounded corners for the section */
+    height: 100%; /* Full height of the popup */
+    width: 100%; /* Full width of the popup */
 }
+
 #popup > section > article
 {
-    width: 50%;
-    padding-top: 15px;
+    width: 50%; /* Width of the article section */
+    padding-top: 15px; /* Padding at the top */
 }
+
 #popup > section > article > h1
 {
-    font-size: 30px;
+    font-size: 30px; /* Font size for the heading */
 }
+
 #popup > section > article > p
 {
-    font-size: 15px;
-    color: var(--color-text-other);
-    width: 75%;
-    margin-top: 20px;
+    font-size: 15px; /* Font size for the paragraph */
+    color: var(--color-text-other); /* Text color */
+    width: 75%; /* Width of the paragraph */
+    margin-top: 20px; /* Margin at the top */
 }
+
 #container_popup_in_popup
 {
-    border: 2px solid var(--color-text-primary);
-    border-radius: 12px;
-    width: 75%;
+    border: 2px solid var(--color-text-primary); /* Border color */
+    border-radius: 12px; /* Rounded corners for the container */
+    width: 75%; /* Width of the container */
 }
+
 #container_popup_in_popup > #lign_container > .lign
 {
-    background-color: var(--color-text-primary);
-    width: 1px;
+    background-color: var(--color-text-primary); /* Background color for the line */
+    width: 1px; /* Width of the line */
 }
+
 #container_popup_in_popup > #first_artticle
 {
-    width: 45%;
+    width: 45%; /* Width of the first article */
 }
+
 #container_popup_in_popup > #second_article
 {
-    width: 55%;
+    width: 55%; /* Width of the second article */
 }
+
 #container_popup_in_popup > #second_article > h2
 {
-    font-size: 12px;
-    font-weight: 400;
-    width: 95%;
+    font-size: 12px; /* Font size for the subheading */
+    font-weight: 400; /* Font weight for the subheading */
+    width: 95%; /* Width of the subheading */
 }
+
 #container_popup_in_popup > div > h1
 {
-    font-size: 20px;
-    width: 100%;
+    font-size: 20px; /* Font size for the heading inside the container */
+    width: 100%; /* Full width of the heading */
 }
+
 #container_popup_in_popup > div > p
 {
-    font-size: 14px;
-    width: 100%;
+    font-size: 14px; /* Font size for the paragraph inside the container */
+    width: 100%; /* Full width of the paragraph */
 }
+
 #container_popup_in_popup > div > a
 {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
+    width: 100%; /* Full width of the link */
+    padding: 10px; /* Padding inside the link */
+    text-align: center; /* Center text alignment */
 }
+
 #container_popup_in_popup > div > a > p
 {
-    font-size: 12px;
+    font-size: 12px; /* Font size for the text inside the link */
 }
-#popup > section > article > h1
+
+#popup > section > article > div > h1
 {
-    font-size: 28px;
+    font-size: 28px; /* Font size for the heading inside the popup article */
 }
+
 #popup_links_shares
 {
-    border: 2px solid var(--color-text-primary);
-    border-radius: 12px;
-    width: 75%;
+    border: 2px solid var(--color-text-primary); /* Border color for the links shares container */
+    border-radius: 12px; /* Rounded corners for the links shares container */
+    width: 75%; /* Width of the links shares container */
 }
+
 #popup_links_shares > h2
 {
-    font-size: 25px;
-    font-weight: 500;
+    font-size: 25px; /* Font size for the heading inside the links shares container */
+    font-weight: 500; /* Font weight for the heading */
 }
+
 #popup_links_shares > p
 {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 12px; /* Font size for the paragraph inside the links shares container */
+    font-weight: 500; /* Font weight for the paragraph */
+}
+
+@media screen and (max-width: 1363px)
+{
+    #popup > section > article > p
+    {
+        width: 85%; /* Adjust width of the paragraph on smaller screens */
+    }
+    #links
+    {
+        width: 80%; /* Adjust width of the links container on smaller screens */
+    }
+}
+
+@media screen and (max-width: 1336px)
+{
+    #container_popup_in_popup > #second_article > div > img
+    {
+        width: 42px; /* Adjust width of images inside the second article on smaller screens */
+    }
+}
+
+@media screen and (max-width: 1264px)
+{
+    #popup
+    {
+        padding: 80px 20px; /* Adjust padding of the popup on smaller screens */
+    }
+    #ladybird
+    {
+        right: 15px; /* Adjust position of the ladybird image on smaller screens */
+    }
+}
+
+@media screen and (max-width: 1259px)
+{
+    #container_popup_in_popup
+    {
+        width: 90%; /* Adjust width of the container on smaller screens */
+    }
+    #popup_links_shares
+    {
+        width: 90%; /* Adjust width of the links shares container on smaller screens */
+    }
+    #popup > section > article > p
+    {
+        width: 90%; /* Adjust width of the paragraph inside the popup on smaller screens */
+    }
+}
+
+@media screen and (max-width: 928px)
+{
+    #section_article_wrap
+    {
+        flex-direction: column-reverse; /* Reverse column direction on smaller screens */
+    }
+    #baby
+    {
+        display: none; /* Hide the baby element on smaller screens */
+    }
+    #section_article_wrap > #desktop
+    {
+        display: none; /* Hide the desktop version on smaller screens */
+    }
+    #popup > section > article
+    {
+        width: 100%; /* Full width of the article on smaller screens */
+    }
+    #mobile_version
+    {
+        display: flex; /* Show mobile version */
+        overflow-y: auto; /* Enable vertical scrolling */
+    }
+}
+
+@media screen and (max-width: 517px)
+{
+    #popup > #section_article_wrap > #mobile_version > p
+    {
+        width: 100%; /* Full width of the paragraph in mobile version */
+    }
+    #container_popup_in_popup, #popup_links_shares
+    {
+        width: 100%; /* Full width of the containers in mobile version */
+    }
+    #title_mobile_popup
+    {
+        width: 100%; /* Full width of the mobile title */
+    }
+}
+
+@media screen and (max-width: 876px)
+{
+    #popup
+    {
+        padding: 10px; /* Adjust padding of the popup on very small screens */
+    }
+}
+
+@media screen and (max-width: 458px)
+{
+    #mobile_version
+    {
+        height: 100%; /* Full height of the mobile version */
+    }
+}
+
+@media screen and (max-width: 416px)
+{
+    #popup > #section_article_wrap > #mobile_version > p
+    {
+        font-size: 12px; /* Adjust font size of the paragraph in mobile version */
+    }
+    #section_article_wrap
+    {
+        padding: 10px; /* Adjust padding of the section on smaller screens */
+    }
+}
+
+@media screen and (max-width: 380px)
+{
+    #popup > #section_article_wrap >  #mobile_version > h1
+    {
+        font-size: 25px; /* Adjust font size of the heading in mobile version */
+    }
+}
+
+@media screen and (max-width: 380px)
+{
+    #popup_links_shares
+    {
+        padding: 10px; /* Adjust padding of the links shares container */
+    }
 }

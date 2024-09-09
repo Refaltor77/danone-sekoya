@@ -1,42 +1,69 @@
+/**
+ *   _____
+ *  /     \
+ * |  o o  |
+ * |   >   |
+ * |  \_/  |
+ *  \_____/
+ *
+ * @sekoyaTech
+ * @author SekoyaDigital
+ */
+
 @import "../variables.css";
 
 #three_section
 {
     background: url("../../../storage/app/public/images/background_second.png") center center no-repeat;
-    background-size: cover;
-    border-radius: 2px;
+    background-size: cover; /* Cover the background area with the image */
+    border-radius: 2px; /* Round corners of the section */
 }
+
 #three_section
 {
-    font-size: 28px;
+    font-size: 28px; /* Font size for the text in the section */
 }
+
 #image_baby
 {
-    width: 509px;
-    height: 338px;
+    width: 509px; /* Width of the baby image */
 }
+
 #section_article_instructions > article > p
 {
-    font-size: 15px;
-    color: var(--color-text-other);
+    font-size: 15px; /* Font size for paragraph text in instructions */
+    color: var(--color-text-other); /* Text color for instructions */
 }
+
 .text_button_link
 {
-    background: var(--color-text-secondary);
-    border-radius: 42px;
-    box-shadow: 0 5px 5px #c1c1c1;
-    transition: 150ms;
+    background: var(--color-text-secondary); /* Background color for the text button link */
+    border-radius: 42px; /* Round corners of the button */
+    box-shadow: 0 5px 5px #c1c1c1; /* Shadow effect for the button */
+    transition: 150ms; /* Transition effect for button hover */
 }
+
 .text_button_link:hover
 {
-    background: var(--color-text-secondary-hover);
+    background: var(--color-text-secondary-hover); /* Background color on hover */
 }
+
 .text_button_link
 {
-    font-size: 20px;
+    font-size: 20px; /* Font size for the text button link */
 }
+
 .text_article_three_section
 {
-    width: 93%;
-    line-height: 18px;
+    width: 93%; /* Width of the article text section */
+    line-height: 18px; /* Line height for text in the article */
+}
+
+@media screen and (max-width: 1246px)
+{
+    .text_article_three_section
+    {
+        width: 100%; /* Full width on smaller screens */
+        line-height: 18px; /* Line height for text in the article */
+    }
 }

@@ -1,3 +1,15 @@
+/**
+ *   _____
+ *  /     \
+ * |  o o  |
+ * |   >   |
+ * |  \_/  |
+ *  \_____/
+ *
+ * @sekoyaTech
+ * @author SekoyaDigital
+ */
+
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* Définir la police via @font-face */
@@ -45,6 +57,6 @@ input {
     border-color: var(--color-border-inputs);
 }
 .container_center {
-    max-width: 1440px; /* Vous pouvez ajuster cette valeur selon vos besoins */
+    max-width: 1440px;
     margin: 0 auto;
 }
