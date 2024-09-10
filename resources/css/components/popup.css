@@ -14,7 +14,7 @@
 
 #popup
 {
-    background: rgba(0, 0, 0, 0.2); /* Transparent background for the popup */
+    background: rgba(0, 0, 0, 0.5); /* Transparent background for the popup */
     position: fixed; /* Fixed positioning to cover the entire screen */
     width: 100%; /* Full width of the screen */
     height: 100%; /* Full height of the screen */
@@ -165,6 +165,10 @@
     {
         right: 15px; /* Adjust position of the ladybird image on smaller screens */
     }
+    #cross_marker
+    {
+        right: 35px;
+    }
 }
 
 @media screen and (max-width: 1259px)
@@ -206,6 +210,10 @@
         display: flex; /* Show mobile version */
         overflow-y: auto; /* Enable vertical scrolling */
     }
+    #cross_marker
+    {
+        top: 100px;
+    }
 }
 
 @media screen and (max-width: 517px)
@@ -229,6 +237,11 @@
     #popup
     {
         padding: 10px; /* Adjust padding of the popup on very small screens */
+    }
+    #cross_marker
+    {
+        top: 20px;
+        right: 20px;
     }
 }
 

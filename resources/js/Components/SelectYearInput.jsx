@@ -25,8 +25,10 @@ export default function SelectYearInput({ className = "", value, onChange, error
                 className={`text-gray-500 rubik rounded-3xl border-blue p-2.5 px-8 ${className}`}
                 value={value}
                 onChange={onChange}
-                required
             >
+                <option value={""}>
+
+                </option>
                 {/* Generate options for each year */}
                 {years.map((year) => (
                     <option key={year} value={year}>

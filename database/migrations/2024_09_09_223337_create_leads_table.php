@@ -26,13 +26,16 @@ return new class extends Migration
             $table->string('email')
                 ->comment('Adresse email du lead / Email address of the lead');
 
-            $table->string('day')
+            $table->string('share_id')->nullable()
+                ->comment('ID de partage pour le lead / Share ID of the lead');
+
+            $table->string('day')->nullable()->default("")
                 ->comment('Jour de la date de naissance / Day part of the date of birth');
 
-            $table->string('month')
+            $table->string('month')->nullable()->default("")
                 ->comment('Mois de la date de naissance / Month part of the date of birth');
 
-            $table->string('year')
+            $table->string('year')->nullable()->default("")
                 ->comment('Année de la date de naissance / Year part of the date of birth');
 
             $table->boolean('optinBledina')

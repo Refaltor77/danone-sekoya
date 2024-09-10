@@ -57,12 +57,25 @@ class LeadController extends Controller
                     }
                 }
             ],
-            'day' => 'required', # Day part of the date of birth is required
-            'month' => 'required', # Month part of the date of birth is required
-            'year' => 'required', # Year part of the date of birth is required
+            'day' => 'nullable', # Day part of the date of birth is required
+            'month' => 'nullable', # Month part of the date of birth is required
+            'year' => 'nullable', # Year part of the date of birth is required
             'optinBledina' => 'required|boolean', # Opt-in for Blédina offers is required and should be a boolean
             'optinKiri' => 'required|boolean', # Opt-in for Kiri offers is required and should be a boolean
         ]);
+
+        # check if the lead origin is share.
+        if ($request->get('share_id'))
+        {
+            $lead = Lead::where('share_id', $request->get('share_id'))->first();
+            if ($lead instanceof Lead)
+            {
+                $leadDuplicate = $lead->replicate();
+                $leadDuplicate->created_at = now();
+                $leadDuplicate->share_id = null; # for check if the lead is sharing duplicate lead or saving lead from the form
+                $leadDuplicate->save();
+            }
+        }
 
         # Create a new instance of the Lead model
         $lead = new Lead();
@@ -72,6 +85,7 @@ class LeadController extends Controller
         $lead->lastname = $request->input('lastname');
         $lead->email = $request->input('email');
         $lead->day = $request->input('day');
+        $lead->share_id = uniqid();
         $lead->month = $request->input('month');
         $lead->year = $request->input('year');
         $lead->optinBledina = $request->input('optinBledina');
@@ -80,6 +94,7 @@ class LeadController extends Controller
         # Save the model to the database
         $lead->save();
 
-        return back();
+
+        return redirect()->to(env("APP_URL") . '?share_id=' . $lead->share_id);
     }
 }

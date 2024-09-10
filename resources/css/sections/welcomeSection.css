@@ -44,6 +44,10 @@
     {
         align-self: center; /* Center align the form container */
     }
+    #form_container
+    {
+        background: red;
+    }
 }
 
 @media screen and (max-width: 470px)

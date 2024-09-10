@@ -144,3 +144,11 @@ input[type=checkbox]
         font-size: 1px; /* Extremely small font size for checkboxes */
     }
 }
+
+@media screen and (max-width: 932px)
+{
+    #form_container
+    {
+        background: rgba(255, 255, 255, 0.95); /* Background color with transparency */
+    }
+}

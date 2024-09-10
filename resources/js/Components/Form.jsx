@@ -19,15 +19,16 @@ import SelectYearInput from "@/Components/SelectYearInput.jsx";
 import Checkbox from "@/Components/Checkbox.jsx";
 import ButtonProcessing from "@/Components/ButtonProcessing.jsx";
 import { useForm } from "@inertiajs/react";
+import {useState} from "react";
 
-export default function Form({ showPopup, setShowPopup }) {
+export default function Form({ showPopup, setShowPopup, setShareIdForPopup}) {
     const { data, setData, post, processing, errors, reset } = useForm({
         firstname: "",
         lastname: "",
         email: "",
-        day: "28",
-        month: "10",
-        year: "2014",
+        day: "",
+        month: "",
+        year: "",
         optinBledina: false,
         optinKiri: false
     });
@@ -42,11 +43,12 @@ export default function Form({ showPopup, setShowPopup }) {
      */
     const submit = (e) => {
         e.preventDefault();
-        post(route("lead.store"), {
-            onSuccess: successHandle,
-            onError: (errors) => {
-                console.log(errors);
-            }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const queryString = urlParams.toString(); // Convertir les paramètres en chaîne de requête
+        const urlWithParams = `${route("lead.store")}?${queryString}`;
+        post(urlWithParams, {
+            onSuccess: successHandle
         });
     }
 
@@ -57,7 +59,18 @@ export default function Form({ showPopup, setShowPopup }) {
      */
     const successHandle = () => {
         setShowPopup(true);
-    }
+
+        // Retrieve URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+
+        // Check if the 'share_id' parameter exists in the URL
+        const shareId = urlParams.get('share_id');
+
+        if (shareId) {
+            setShareIdForPopup(shareId);
+        }
+    };
+
 
     return (
         <div

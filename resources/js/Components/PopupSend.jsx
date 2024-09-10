@@ -11,12 +11,37 @@
  */
 import "../../css/components/popup.css";
 import ButtonLink from "@/Components/ButtonLink.jsx";
+import {useState} from "react";
 
-export default function PopupSend({ showPopup, setShowPopup }) {
+export default function PopupSend({ showPopup, setShowPopup, shareID}) {
+    const [copySuccess, setCopySuccess] = useState(false);
+    const URL = "http://185.157.245.204:8011?share_id=" + shareID;
+
+    /* Function to copy url with link share button. */
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(URL)
+            .then(() => {
+                setCopySuccess(true);
+                setTimeout(() => setCopySuccess(false), 2000);
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+    };
+
+    /* Function to close popup when form is sending. */
+    const handleClickClosePopup = () => {
+        setShowPopup(false);
+    }
+
+
     return (
-        <section id={"popup"} className={showPopup ? "p-20 px-40 relative" : "hidden"}>
+        <section id={"popup"} className={showPopup ? "p-16 px-40 relative" : "hidden"}>
             {/* Main popup container with conditional visibility */}
-            <section id={"section_article_wrap"} className={"flex justify-between bg-white p-8"}>
+            <section id={"section_article_wrap"} className={"flex justify-between bg-white p-4"}>
+                <div id={"cross_marker"} onClick={handleClickClosePopup} className={"absolute right-44 -translate-y-1 cursor-pointer"}>
+                    <i className="fa-solid fa-xmark"></i>
+                </div>
                 {/* Decorative images within the popup */}
                 <img id={"ladybird"} style={{ transform: "translateY(300px)" }} className={"absolute right-40"}
                      src={"/storage/images/ladybird_popup.svg"} alt={"ladybird"} />
@@ -31,20 +56,23 @@ export default function PopupSend({ showPopup, setShowPopup }) {
                         dès maintenant d’un <span className={"font-bold"}>bon de réduction utilisable en
                         magasin pour l’achat de deux nouvelles recettes.</span>
                     </p>
-                    <div id={"container_popup_in_popup"} className={"flex justify-between mt-4"}>
+                    <div id={"container_popup_in_popup"} className={"flex justify-between mt-2"}>
                         {/* First promotional offer */}
-                        <div id={"first_artticle"} className={"flex flex-col p-4 gap-1"}>
+                        <div id={"first_artticle"} className={"flex flex-col p-3 gap-1"}>
                             <h1 className={"kga primary-color text-center"}>-1,10€</h1>
                             <p className={"kga primary-color text-center"}>
                                 de réduction sur
                                 Blédichef x Kiri
                             </p>
-                            <ButtonLink>
+                            <ButtonLink
+                                href={"https://www.ribambel.com/bons-de-reduction"}
+                                basicLink={true}
+                            >
                                 J’en profite
                             </ButtonLink>
                         </div>
                         {/* Separator line */}
-                        <div id={"lign_container"} className={"p-4"}>
+                        <div id={"lign_container"} className={"p-3"}>
                             <div className={"h-full lign"}></div>
                         </div>
                         {/* Second promotional offer */}
@@ -60,18 +88,44 @@ export default function PopupSend({ showPopup, setShowPopup }) {
                             </div>
                         </div>
                     </div>
-                    <h1 className={"kga primary-color text-center mt-8 w-3/5"}>
+                    <h1 className={"kga primary-color text-center mt-2 w-3/5"}>
                         Augmentez vos chances
                         de gagner
                     </h1>
-                    <article id={"popup_links_shares"} className={"mt-4 flex flex-col p-4 px-8 items-center"}>
+                    <article id={"popup_links_shares"} className={"mt-2 flex flex-col p-2 px-8 items-center"}>
                         <h2 className={"rubik primary-color text-center"}>Invitez des ami(e)s</h2>
                         <p className={"rubik primary-color text"}>1 ami inscrit = 5 chances supplémentaires</p>
-                        <div id={"links"} className={"flex items-center mt-4 justify-between w-2/4"}>
-                            <img width={48} src={"/storage/images/links/facebook.svg"} alt={"facebook_share"} />
-                            <img width={48} src={"/storage/images/links/mail.svg"} alt={"mail_share"} />
-                            <img width={48} src={"/storage/images/links/link.svg"} alt={"link_share"} />
+                        <div id="links" className="flex items-center mt-4 justify-between w-2/4">
+                            {/* Lien de partage Facebook */}
+                            <a
+                                href={"https://www.facebook.com/sharer/sharer.php?u=" + URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img width={48} src="/storage/images/links/facebook.svg" alt="facebook_share"/>
+                            </a>
+
+                            {/* Lien pour partager par e-mail */}
+                            <a
+                                href={"mailto:?subject=Check this out&body=Voici le lien de l'article : " + URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img width={48} src="/storage/images/links/mail.svg" alt="mail_share"/>
+                            </a>
+
+                            {/* Copy link */}
+                            <div className="relative">
+                                <button onClick={copyToClipboard}>
+                                    <img width={48} src="/storage/images/links/link.svg" alt="copy_link" />
+                                </button>
+                                {/* Message de succès après copie */}
+                                {copySuccess && (
+                                    <span className="absolute top-10 text-sm text-white font-bold rubik w-36 bg-green-500 p-1 border border-green-700 rounded">Lien copié !</span>
+                                )}
+                            </div>
                         </div>
+
                     </article>
                 </article>
 
@@ -120,9 +174,34 @@ export default function PopupSend({ showPopup, setShowPopup }) {
                         <h2 className={"rubik primary-color text-center"}>Invitez des ami(e)s</h2>
                         <p className={"rubik primary-color text"}>1 ami inscrit = 5 chances supplémentaires</p>
                         <div id={"links"} className={"flex items-center mt-4 justify-between w-2/4"}>
-                            <img width={48} src={"/storage/images/links/facebook.svg"} alt={"facebook_share"} />
-                            <img width={48} src={"/storage/images/links/mail.svg"} alt={"mail_share"} />
-                            <img width={48} src={"/storage/images/links/link.svg"} alt={"link_share"} />
+                            {/* Lien de partage Facebook */}
+                            <a
+                                href={"https://www.facebook.com/sharer/sharer.php?u=" + URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img width={48} src="/storage/images/links/facebook.svg" alt="facebook_share"/>
+                            </a>
+
+                            {/* Lien pour partager par e-mail */}
+                            <a
+                                href={"mailto:?subject=Check this out&body=Voici le lien de l'article : " + URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <img width={48} src="/storage/images/links/mail.svg" alt="mail_share"/>
+                            </a>
+
+                            {/* Copy link */}
+                            <div className="relative">
+                                <button onClick={copyToClipboard}>
+                                    <img width={48} src="/storage/images/links/link.svg" alt="copy_link" />
+                                </button>
+                                {/* Message de succès après copie */}
+                                {copySuccess && (
+                                    <span className="absolute top-10 text-sm text-white font-bold rubik w-36 bg-green-500 p-1 border border-green-700 rounded">Lien copié !</span>
+                                )}
+                            </div>
                         </div>
                     </article>
                 </article>

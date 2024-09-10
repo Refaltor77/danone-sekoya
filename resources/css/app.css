@@ -2,3 +2,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.element {
+    opacity: 0;
+    transition: opacity 2.2s;
+}
+
+.element.visible {
+    opacity: 1;
+}
+
+.element_logo {
+    transition: 2s;
+    opacity: 0;
+    animation: logoAnimate 2s forwards;
+}
+
+@keyframes logoAnimate {
+    0% {
+        opacity: 0;
+        transform: translateX(-400px);
+    }
+    100% {
+        opacity: 1; /* L'élément devient visible à la fin de l'animation */
+        transform: translateX(0px);
+    }
+}
+

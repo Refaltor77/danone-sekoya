@@ -20,8 +20,10 @@ export default function SelectDayInput({ className = "", value, onChange, error 
                 className={`text-gray-500 rubik rounded-3xl border-blue p-2.5 px-8 ${className}`}
                 value={value}
                 onChange={onChange}
-                required
             >
+                <option value={""}>
+
+                </option>
                 {/* Generate options for days 1 through 31 */}
                 {[...Array(31)].map((_, index) => (
                     <option key={index + 1} value={index + 1}>

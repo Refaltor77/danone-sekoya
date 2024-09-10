@@ -11,14 +11,15 @@ import PopupSend from "@/Components/PopupSend.jsx";
 export default function Index() {
     // State to control the visibility of the popup
     const [showPopup, setShowPopup] = useState(false);
+    const [shareID, setShareIdForPopup] = useState(false);
 
     return (
         <main>
             {/* Popup component, only visible when showPopup is true */}
-            <PopupSend showPopup={showPopup} setShowPopup={setShowPopup} />
+            <PopupSend shareID={shareID} showPopup={showPopup} setShowPopup={setShowPopup} />
 
             {/* WelcomeSection is passed props to control the popup visibility */}
-            <WelcomeSection showPopup={showPopup} setShowPopup={setShowPopup} />
+            <WelcomeSection showPopup={showPopup} setShowPopup={setShowPopup} setShareIdForPopup={setShareIdForPopup} />
 
             {/* Additional sections of the page */}
             <SecondSection />

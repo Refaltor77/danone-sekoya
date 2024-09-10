@@ -26,8 +26,10 @@ export default function SelectMonthInput({ className = "", value, onChange, erro
                 className={`text-gray-500 rubik rounded-3xl border-blue p-2.5 px-8 ${className}`}
                 value={value}
                 onChange={onChange}
-                required
             >
+                <option value={""}>
+
+                </option>
                 {/* Generate options for each month */}
                 {months.map((month, index) => (
                     <option key={index} value={index + 1}>

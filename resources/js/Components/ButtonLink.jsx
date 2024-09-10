@@ -12,10 +12,21 @@
 
 import { Link } from "@inertiajs/react";
 import "../../css/components/buttonLink.css";
+export default function ButtonLink({basicLink = false, href = "", id = "", className = "", children}) {
 
-export default function ButtonLink({ id = "", className = "", children }) {
+    if (basicLink)
+    {
+        return (
+            <a href={href} target={"_blank"} className={"text_button_link p-4 px-24 " + className} id={id}>
+                <p className={"kga text-white"}>
+                    {children}
+                </p>
+            </a>
+        );
+    }
+
     return (
-        <Link className={"text_button_link p-4 px-24 " + className} id={id}>
+        <Link href={href} className={"text_button_link p-4 px-24 " + className} id={id}>
             <p className={"kga text-white"}>
                 {children}
             </p>

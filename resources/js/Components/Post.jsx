@@ -9,14 +9,14 @@
  *
  * The card has a hover effect that transitions between the front and back sides.
  */
-export default function Post({ title, secondTitle, text, id }) {
+export default function Post({ title, secondTitle, text, id, className}) {
     return (
-        <article className="relative">
+        <article className={"relative group " + className}>
             <div className={"box"}>
                 <div className={"box-inner"}>
                     {/* Front side of the card */}
                     <div id={id} className="h-full flex flex-col justify-end items-center box-front">
-                        <img src={"/storage/images/new_text.svg"} alt={"new_text"} className={"relative z-50 top-0 img_new"} />
+                        <img src={"/storage/images/new_text.svg"} alt={"new_text"} className={"z-50 img_new absolute"} />
                         <div
                             className={"bg-primary w-4/5 kga text-white text-center py-2 translate-y-6 group-hover:opacity-0 transition-opacity popup_post z-50"}>
                             {title}
