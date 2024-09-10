@@ -2,8 +2,6 @@
 // https://www.sekoya.digital/
 
 import "../../../css/sections/threeSection.css";
-import ButtonLink from "@/Components/ButtonLink.jsx";
-import { Link } from "@inertiajs/react";
 
 export default function ThreeSections() {
     return (
@@ -16,7 +14,7 @@ export default function ThreeSections() {
                     alt={"second-ladybird"}
                 />
 
-                <div className="-translate-y-14">
+                <div className="-translate-y-0 sm:-translate-y-14">
                     {/* Section title */}
                     <h1
                         id={"title_three_section"}
@@ -27,8 +25,9 @@ export default function ThreeSections() {
 
                     {/* Content section with responsive layout */}
                     <section
+
                         id={"section_article_instructions"}
-                        className="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-10 px-2 sm:px-16 lg:px-40 translate-y-24 sm:translate-y-0 lg:mt-16"
+                        className="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-10 px-2 sm:px-16 lg:px-40 translate-y-10 sm:translate-y-10 lg:mt-16"
                     >
                         {/* Image of a baby */}
                         <img
