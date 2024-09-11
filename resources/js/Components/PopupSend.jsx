@@ -19,14 +19,27 @@ export default function PopupSend({ showPopup, setShowPopup, shareID}) {
 
     /* Function to copy url with link share button. */
     const copyToClipboard = () => {
-        navigator.clipboard.writeText(URL)
-            .then(() => {
+        const textArea = document.createElement("textarea");
+        textArea.value = URL; // Le texte à copier
+
+        textArea.style.position = "fixed";
+        textArea.style.opacity = 0;
+
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            const successful = document.execCommand("copy");
+            if (successful) {
                 setCopySuccess(true);
                 setTimeout(() => setCopySuccess(false), 2000);
-            })
-            .catch(err => {
-                console.error("Failed to copy: ", err);
-            });
+            }
+        } catch (err) {
+
+        }
+
+        document.body.removeChild(textArea);
     };
 
     /* Function to close popup when form is sending. */
@@ -38,7 +51,7 @@ export default function PopupSend({ showPopup, setShowPopup, shareID}) {
     return (
         <section id={"popup"} className={showPopup ? "p-16 px-40 relative" : "hidden"}>
             {/* Main popup container with conditional visibility */}
-            <section id={"section_article_wrap"} className={"flex justify-between bg-white p-4"}>
+            <section id={"section_article_wrap"} className={"flex justify-between bg-white p-6"}>
                 <div id={"cross_marker"} onClick={handleClickClosePopup} className={"absolute right-44 -translate-y-1 cursor-pointer"}>
                     <i className="fa-solid fa-xmark"></i>
                 </div>
@@ -107,7 +120,9 @@ export default function PopupSend({ showPopup, setShowPopup, shareID}) {
 
                             {/* Lien pour partager par e-mail */}
                             <a
-                                href={"mailto:?subject=Check this out&body=Voici le lien de l'article : " + URL}
+                                href={"mailto:?subject=Tente ta chance toi aussi&body=Salut ! \n" +
+                                    "Je viens de participer au jeu-concours Bledichef x Kiri pour gagner un panier gourmand ! Toi aussi tu peux tenter ta chance !\n" +
+                                    "Inscris-toi vite via mon lien de partage : " + URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >
@@ -185,7 +200,9 @@ export default function PopupSend({ showPopup, setShowPopup, shareID}) {
 
                             {/* Lien pour partager par e-mail */}
                             <a
-                                href={"mailto:?subject=Check this out&body=Voici le lien de l'article : " + URL}
+                                href={"mailto:?subject=Tente ta chance toi aussi&body=Salut ! \n" +
+                                    "Je viens de participer au jeu-concours Bledichef x Kiri pour gagner un panier gourmand ! Toi aussi tu peux tenter ta chance !\n" +
+                                    "Inscris-toi vite via mon lien de partage : " + URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                             >

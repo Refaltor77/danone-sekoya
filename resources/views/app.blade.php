@@ -17,6 +17,27 @@
         <!-- Scripts -->
         <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/19f6d46291c3b3aa1a5cb517aebc250a.js"></script>
 
+        <!-- Primary Meta Tags -->
+        <title>Blédichef x Kiri - jeu-concours </title>
+        <meta name="title" content="Blédichef x Kiri - jeu-concours " />
+        <meta name="description" content="Participe au jeu-concours Blédichef x Kiri et tente de gagner un panier gourmand !" />
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ env("APP_URL") }}" />
+        <meta property="og:title" content="Blédichef x Kiri - jeu-concours " />
+        <meta property="og:description" content="Participe au jeu-concours Blédichef x Kiri et tente de gagner un panier gourmand !" />
+        <meta property="og:image" content="{{ env("APP_URL") }}/storage/images/visu.png" />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="{{ env("APP_URL") }}" />
+        <meta property="twitter:title" content="Blédichef x Kiri - jeu-concours " />
+        <meta property="twitter:description" content="Participe au jeu-concours Blédichef x Kiri et tente de gagner un panier gourmand !" />
+        <meta property="twitter:image" content="{{ env("APP_URL") }}/storage/images/visu.png" />
+
+        <!-- Meta Tags Generated with https://metatags.io -->
+
         @routes
         @viteReactRefresh
         @vite(['resources/js/app.jsx', "resources/js/Pages/{$page['component']}.jsx"])

@@ -231,7 +231,20 @@
         width: 100%; /* Full width of the mobile title */
     }
 }
-
+@media screen and (max-width: 1228px)
+{
+    #container_popup_in_popup > #first_artticle > p
+    {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 1090px)
+{
+    #popup_links_shares
+    {
+        transform: translateY(-5px);
+    }
+}
 @media screen and (max-width: 876px)
 {
     #popup
