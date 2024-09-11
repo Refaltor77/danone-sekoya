@@ -46,7 +46,7 @@ class LeadController extends Controller
                 'email',
                 'max:255',
                 function ($attribute, $value, $fail) {
-                    if (!preg_match('/\.(fr|com|net|org)$/', $value)) {
+                    if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
                         $fail('L\'adresse email doit contenir un "@" et une extension.');
                     }
                 },
