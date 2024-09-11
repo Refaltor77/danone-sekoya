@@ -24,7 +24,6 @@ export default function Checkbox({ className, value, onClick, label, id, pixelLa
     return (
         <div className={"flex gap-2"}>
             <input
-                id={id}
                 type="checkbox"
                 className={" " + className}
                 value={value}
@@ -33,7 +32,6 @@ export default function Checkbox({ className, value, onClick, label, id, pixelLa
             <label
                 style={{ fontSize: pixelLabel + "px" }}
                 className={"text-gray-500 rubik"}
-                htmlFor={id}
             >
                 {label}
             </label>

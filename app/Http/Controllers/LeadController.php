@@ -47,12 +47,12 @@ class LeadController extends Controller
                 'max:255',
                 function ($attribute, $value, $fail) {
                     if (!preg_match('/\.(fr|com|net|org)$/', $value)) {
-                        $fail('L\'adresse email doit se terminer par .fr, .com, .net ou .org.');
+                        $fail('L\'adresse email doit contenir un "@" et une extension.');
                     }
                 },
                 # Ensure the email is unique in the leads table
                 function ($attribute, $value, $fail) {
-                    if (DB::table('leads')->where('email', $value)->exists()) {
+                    if (Lead::where('email', $value)->first()) {
                         $fail('Email déjà enregistré.');
                     }
                 }
