@@ -56,6 +56,30 @@ return [
             'throw' => false,
         ],
 
+
+        'sftp1' => [
+            'driver' => 'sftp',
+            'host' => env('SFTP_SERVER1_HOST'),
+            'username' => env('SFTP_SERVER1_USERNAME'),
+            'password' => env('SFTP_SERVER1_PASSWORD'),
+            'private_key' => env('SFTP_SERVER1_PRIVATE_KEY'),
+            'root' => env('SFTP_SERVER1_ROOT', ''),
+            'port' => env('SFTP_SERVER1_PORT', 22),
+            'timeout' => env('SFTP_SERVER1_TIMEOUT', 30),
+            'throw' => false,
+        ],
+
+        'sftp2' => [
+            'driver' => 'sftp',
+            'host' => env('SFTP_SERVER2_HOST'),
+            'username' => env('SFTP_SERVER2_USERNAME'),
+            'password' => env('SFTP_SERVER2_PASSWORD'),
+            'private_key' => env('SFTP_SERVER2_PRIVATE_KEY'),
+            'root' => env('SFTP_SERVER2_ROOT', ''),
+            'port' => env('SFTP_SERVER2_PORT', 22),
+            'timeout' => env('SFTP_SERVER2_TIMEOUT', 30),
+            'throw' => false,
+        ],
     ],
 
     /*

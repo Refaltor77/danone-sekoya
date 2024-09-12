@@ -39,8 +39,8 @@ class LeadController extends Controller
     {
         # Validate the incoming request data
         $request->validate([
-            'firstname' => 'required|max:255', # First name is required and should not exceed 255 characters
-            'lastname' => 'required|max:255',  # Last name is required and should not exceed 255 characters
+            'firstname' => 'required|max:30', # First name is required and should not exceed 30 characters
+            'lastname' => 'required|max:30',  # Last name is required and should not exceed 30 characters
             'email' => [
                 'required',
                 'email',
