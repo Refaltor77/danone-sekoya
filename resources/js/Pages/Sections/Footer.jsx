@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="p-6 sm:p-10 lg:px-32 text-white flex items-center justify-between flex-wrap">
                 {/* Navigation links */}
                 <nav className="flex items-center gap-2 flex-wrap">
-                    <a className="rubik text_nav_footer" href={"#"} target={"_blank"}>Règlement et conditions¹</a>
+                    <a className="rubik text_nav_footer" href={"/storage/rules.pdf"} target={"_blank"}>Règlement et conditions¹</a>
                     <p className="rubik text_nav_footer">|</p>
                     <a className="rubik text_nav_footer"
                        href={"https://shop.bledina.com/content/13-politique-de-protection-de-la-vie-privee"}
