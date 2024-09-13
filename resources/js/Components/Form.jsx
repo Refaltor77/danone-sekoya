@@ -157,7 +157,7 @@ export default function Form({ showPopup, setShowPopup, setShareIdForPopup}) {
                         className={"rounded-full"}
                         pixelLabel={14}
                         id={"promos_bledina"}
-                        label={"Je souhaite recevoir les offres promotionnelles de Blédina"}
+                        label={"Je souhaite recevoir les offres promotionnelles de Blédina²"}
                         value={data.optinBledina}
                         onClick={(e) => {
                             setData('optinBledina', e.target.checked);
@@ -167,7 +167,7 @@ export default function Form({ showPopup, setShowPopup, setShareIdForPopup}) {
                         className={"rounded-full"}
                         pixelLabel={14}
                         id={"promos_kiri"}
-                        label={"Je souhaite recevoir les offres promotionnelles de Ribambel (dont Kiri)"}
+                        label={"Je souhaite recevoir les offres promotionnelles de Ribambel³ (dont Kiri)"}
                         value={data.optinKiri}
                         onClick={(e) => {
                             setData('optinKiri', e.target.checked);
@@ -178,7 +178,7 @@ export default function Form({ showPopup, setShowPopup, setShareIdForPopup}) {
                     id={"span_click"}
                     className={"text-center mt-4"}
                 >
-                    En cliquant sur “Je participe”, vous acceptez les <a href={"#"} className={"underline"}>conditions du jeu.</a>
+                    En cliquant sur “Je participe”, vous acceptez les <a href={"/storage/rules.pdf"} className={"underline"}>conditions du jeu.</a>
                 </span>
                 <div className={"flex items-center justify-center mt-1"}>
                     <ButtonProcessing
@@ -190,9 +190,6 @@ export default function Form({ showPopup, setShowPopup, setShareIdForPopup}) {
                 </div>
                 <div className={"px-2 flex flex-col mt-2"}>
                     <span className={"span_line_bottom rubik"}>* Champs obligatoires</span>
-                    <span className={"span_line_bottom rubik"}>
-                        ¹ La composition des paniers gourmands est détaillée dans le <a href={"#"} className={"underline"}>règlement du jeu</a>
-                    </span>
                 </div>
             </form>
         </div>

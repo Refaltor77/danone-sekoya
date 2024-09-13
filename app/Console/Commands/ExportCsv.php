@@ -31,7 +31,7 @@ class ExportCsv extends Command
     {
         # bel
         $sftp = Storage::disk('sftp1');
-        $lines = "email;date;civilite;prenom;nom;origine;optin\n";
+        $lines = "email|date|civilite|prenom|nom|origine|optin\n";
 
         $leads = Lead::all();
         foreach ($leads as $lead) {
@@ -45,12 +45,13 @@ class ExportCsv extends Command
             $lastname = $lead->lastname;
             $origin = "2024_BLEDICHEF_KIRI";
             $optIn = $lead->optinBledina ? 1 : 0;
-            $lines .= $email . ";" . $date . ";" . $civility . ";" . $firstname . ";" . $lastname . ";" . $origin . ";" . $optIn . "\n";
+            $lines .= $email . "|" . $date . "|" . $civility . "|" . $firstname . "|" . $lastname . "|" . $origin . "|" . $optIn . "\n";
         }
 
         $fileName = "2024_BLEDICHEF_KIRI_" . now()->format("Ymd") . ".csv";
         $sftp->put("" . $fileName, $lines);
         $this->info("exported for bel.");
+
 
 
 
@@ -73,7 +74,7 @@ class ExportCsv extends Command
                 .= 41245679 . ";"
                 . "BLEDINAKIRI" . ";"
                 . null . ";"
-                . null . ";"
+                . $lastname . ";"
                 . $firstname . ";"
                 . $date . ";"
                 . $email . ";"
@@ -88,13 +89,12 @@ class ExportCsv extends Command
                 . "" . ";"
                 . "" . ";"
                 . "" . ";"
-                . $day . "/" . $month . "/" . $year . ";\n";
+                . $day . "/" . $month . "/" . $year . "\n";
         }
 
         $fileName = "FluxBDL_BLEDINA_BLEDINAKIRI_" . now()->format("Ymdhis") . ".csv";
         $sftp->put("" . $fileName, $lines);
-        $fileName = "FluxGLL_Gallia_BLEDINAKIRI_" . now()->format("Ymdhis") . ".csv";
-        $sftp->put("" . $fileName, $lines);
         $this->info("exported for bledina.");
+
     }
 }
