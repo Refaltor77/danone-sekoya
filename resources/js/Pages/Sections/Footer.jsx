@@ -20,9 +20,9 @@ export default function Footer() {
                 <span className="rubik text_nav_footer mt-4">Jeu sans obligation d'achat du 16/09/2024 au 16/10/2024 réservé aux personnes physiques majeures
                     résidant en France (Corse comprise). Voir détails du <a target={"_blank"} className={"underline"}
                                                                             href={"/storage/rules.pdf"}>règlement du jeu ici.</a></span>
-                <p className="rubik text_nav_footer">¹ La composition des paniers gourmands est détaillée dans le <a
-                    className={"underline"} href={"/storage/rules.pdf"} target={"_blank"}>règlement du jeu.</a></p>
-                <span className="rubik text_nav_footer mt-4">² Blédina SAS, RCS de Lyon 301 374 922</span>
+                <p className="rubik text_nav_footer  mt-4">¹ La composition des paniers gourmands est détaillée dans le <a
+                    className={"underline "} href={"/storage/rules.pdf"} target={"_blank"}>règlement du jeu.</a></p>
+                <span className="rubik text_nav_footer">² Blédina SAS, RCS de Lyon 301 374 922</span>
                 <span className="rubik text_nav_footer">³ RIBAMBEL SA, RCS de Nanterre 538 929 076</span>
                 <span
                     className="rubik text_nav_footer">BOUGER, JOUER EST INDISPENSABLE AU DÉVELOPPEMENT DE VOTRE ENFANT</span>
